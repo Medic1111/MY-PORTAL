@@ -3,14 +3,22 @@ import "./App.css";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home/Home";
 import Portal from "./pages/Portal/Portal";
+import axios from "axios";
 
 function App() {
   const loginStatusSelector = useSelector((state) => state.LoginStatusReducer);
 
+  // const fetchApi = () => {
+  //   fetch("/api")
+  //     .then((res) => res.json())
+  //     .then((data) => console.log(data.message))
+  //     .catch((err) => console.log(err));
+  // };
+
   const fetchApi = () => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => console.log(data.message))
+    axios
+      .get("/api")
+      .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   };
 

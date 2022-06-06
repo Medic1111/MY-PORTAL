@@ -1,0 +1,49 @@
+.aside {
+  width: 25%;
+  background-color: #1cb3cd;
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+  background-color: #61566516;
+}
+.p {
+  height: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #f7f7f7;
+  color: #615665;
+  padding: 5vh 5vw;
+  letter-spacing: 1px;
+}
+.classBox {
+  height: 60%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 3vh 0;
+  gap: 1em;
+  width: 90%;
+  background-color: #f7f7f73d;
+  background-color: #f7f7f727;
+}
+
+@media (max-width: 798px) {
+  .aside {
+    width: 100%;
+    height: auto;
+  }
+  .classBox {
+    height: 85%;
+    overflow-y: scroll;
+  }
+}

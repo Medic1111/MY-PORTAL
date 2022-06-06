@@ -1,0 +1,58 @@
+.form {
+  height: 90%;
+  width: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+  background-color: #b01ccd7e;
+  padding: 5vh 0;
+  border-radius: 0;
+}
+.h3 {
+  font-size: 3.5em;
+  letter-spacing: 2.5px;
+  color: #f7f7f7;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 90%;
+  height: 60%;
+  background-color: #f7f7f71d;
+}
+.input {
+  height: 5vh;
+  width: 90%;
+  padding-left: 0.25em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  color: #7d737c;
+  font-size: 1.7em;
+}
+.btn {
+  font-size: 1.7em;
+  height: 5vh;
+  width: 90%;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background-color: #f7f7f73d;
+  color: #f7f7f7;
+  margin-top: 5vh;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #1cb2cd9f;
+}

@@ -1,0 +1,40 @@
+.article {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vh;
+}
+.btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.btn {
+  height: 5vh;
+  width: 15vw;
+  background-color: #b01ccd7e;
+  border: none;
+  color: #423d42;
+  color: #f7f7f7;
+  font-size: 1.6em;
+  letter-spacing: 0.6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #1cb3cd;
+  transition: 0.2s;
+}
+@media (max-width: 798px) {
+  .btn {
+    width: 30%;
+    padding: 0.5em 0;
+    height: 10vh;
+  }
+  .btnBox {
+    margin-bottom: 5vh;
+  }
+}

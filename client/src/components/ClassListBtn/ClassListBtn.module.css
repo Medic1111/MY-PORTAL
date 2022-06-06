@@ -1,0 +1,21 @@
+.btn {
+  background-color: #b01ccd58;
+  background-color: #1cb3cd;
+  color: #f7f7f7;
+  border: none;
+  width: 80%;
+  min-height: 10%;
+  text-transform: uppercase;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #b01ccd8e;
+  transition: 0.2s;
+}
+
+@media (max-width: 798px) {
+  .btn {
+    height: 7vh;
+  }
+}

@@ -1,0 +1,15 @@
+.section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 798px) {
+  .section {
+    margin-top: 5vh;
+    justify-content: flex-start;
+    gap: 3em;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,13 @@
+.h1 {
+  color: #7d737c;
+  letter-spacing: 3px;
+  font-size: 4em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.header {
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

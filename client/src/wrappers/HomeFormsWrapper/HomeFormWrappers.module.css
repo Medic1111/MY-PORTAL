@@ -1,0 +1,13 @@
+.section {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media (max-width: 798px) {
+  .section {
+    display: none;
+  }
+}

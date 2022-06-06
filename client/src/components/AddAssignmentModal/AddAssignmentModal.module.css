@@ -1,0 +1,96 @@
+.p {
+  color: #f7f7f7;
+  color: #423d42f3;
+  font-size: 3.5em;
+  letter-spacing: 2.5px;
+  text-align: center;
+  text-transform: uppercase;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 80%;
+  width: 80%;
+  background-color: #423d4214;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  padding: 5vh 5vw;
+}
+.inputBox {
+  background-color: #423d420f;
+
+  border-radius: 5px;
+  height: 60%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+}
+.label {
+  font-size: 1.7em;
+  letter-spacing: 0.7px;
+  color: #f7f7f7;
+  color: #423d42f3;
+}
+.input {
+  height: 5vh;
+  width: 80%;
+  border: transparent;
+  border-radius: 3px;
+  padding-left: 0.25em;
+  outline: none;
+  color: #423d42f3;
+  font-size: 1.7em;
+  letter-spacing: 0.7px;
+}
+.btnAdd {
+  background-color: #b01ccd7e;
+  background-color: #1cb3cd;
+  cursor: pointer;
+  height: 5vh;
+  width: 80%;
+  border: transparent;
+  border-radius: 3px;
+  color: #423d42f3;
+  color: #f7f7f7;
+  font-size: 1.7em;
+  letter-spacing: 0.7px;
+}
+.btnCancel {
+  background-color: #1cb3cd;
+  background-color: #b01ccd7e;
+  cursor: pointer;
+  height: 5vh;
+  width: 80%;
+  border: transparent;
+  border-radius: 3px;
+  color: #423d42f3;
+  color: #f7f7f7;
+  font-size: 1.7em;
+  letter-spacing: 0.7px;
+}
+.btnBox {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  background-color: #423d420f;
+}
+
+@media (max-width: 798px) {
+  .form {
+    width: 100%;
+    height: 100%;
+  }
+}

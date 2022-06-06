@@ -1,0 +1,38 @@
+.main {
+  width: 70%;
+  background-color: #61566516;
+  height: 80%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 3px;
+}
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5vh 5vw;
+  height: 10%;
+}
+.p {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #f7f7f7;
+  color: #615665;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 798px) {
+  .main {
+    width: 100%;
+    min-height: 60%;
+    min-height: 70%;
+    margin-bottom: 5vh;
+  }
+}

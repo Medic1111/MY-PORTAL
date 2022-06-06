@@ -1,0 +1,29 @@
+.btnBox {
+  display: none;
+}
+
+@media (max-width: 798px) {
+  .btnBox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 90%;
+    width: 100%;
+  }
+  .btn {
+    height: 30%;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+    font-size: 4.5em;
+    letter-spacing: 4px;
+    color: #f7f7f7;
+    background-color: #1cb3cd;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #b01ccd7e;
+  }
+}

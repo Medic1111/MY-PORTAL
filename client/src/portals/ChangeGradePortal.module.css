@@ -1,0 +1,12 @@
+.article {
+  height: 100vh;
+  width: 100vw;
+  background-color: #f7f7f7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}

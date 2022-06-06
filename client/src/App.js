@@ -7,8 +7,8 @@ import Portal from "./pages/Portal/Portal";
 function App() {
   const loginStatusSelector = useSelector((state) => state.LoginStatusReducer);
 
-  const fetchApi = async () => {
-    await fetch("http://localhost:3003/api")
+  const fetchApi = () => {
+    fetch("http://localhost:3003/api")
       .then((res) => res.json())
       .then((data) => console.log(data.message))
       .catch((err) => console.log(err));

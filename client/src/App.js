@@ -8,7 +8,7 @@ function App() {
   const loginStatusSelector = useSelector((state) => state.LoginStatusReducer);
 
   const fetchApi = () => {
-    fetch("http://localhost:3003/api")
+    fetch("/api")
       .then((res) => res.json())
       .then((data) => console.log(data.message))
       .catch((err) => console.log(err));

@@ -7,6 +7,7 @@ import axios from "axios";
 
 const Login = () => {
   const [noMatch, setNoMatch] = useState(false);
+  const [fieldsNotFilled, setFieldsNotFilled] = useState(false);
 
   const [studentInfo, setStudentInfo] = useState({
     studentId: "",
@@ -24,19 +25,25 @@ const Login = () => {
 
   const loginHandler = (event) => {
     event.preventDefault();
-    axios
-      .post("/api/login", studentInfo)
-      .then((serverRes) => {
-        let student = serverRes.data[0];
-        if (serverRes.data.length <= 0) {
-          setNoMatch(true);
-        } else {
-          dispatch(loginStatusActions.setIsLoggedIn());
-          dispatch(currentStudentActions.setCurrentStudent(student));
-          setNoMatch(false);
-        }
-      })
-      .catch((err) => console.log(err));
+    if (studentInfo.studentId.length < 6 || studentInfo.password.length < 6) {
+      console.log("Fields not filled");
+      setFieldsNotFilled(true);
+    } else {
+      axios
+        .post("/api/login", studentInfo)
+        .then((serverRes) => {
+          let student = serverRes.data[0];
+          if (serverRes.data.length <= 0) {
+            setNoMatch(true);
+          } else {
+            dispatch(loginStatusActions.setIsLoggedIn());
+            dispatch(currentStudentActions.setCurrentStudent(student));
+            setNoMatch(false);
+          }
+        })
+        .catch((err) => console.log(err));
+      setFieldsNotFilled(false);
+    }
   };
 
   return (
@@ -44,6 +51,8 @@ const Login = () => {
       <h3 className={classes.h3}>Login</h3>
       <div className={classes.inputBox}>
         {noMatch && <p>Student Id or Password doesn't match</p>}
+        {fieldsNotFilled && <p>Please entere ID and Password</p>}
+
         <input
           className={classes.input}
           type="text"

@@ -4,11 +4,16 @@ import { useDispatch } from "react-redux";
 import { currentStudentActions } from "../../features/currentStudent";
 import { loginStatusActions } from "../../features/loginStatus";
 import axios from "axios";
+import { set } from "mongoose";
 
 const Register = () => {
   const dispatch = useDispatch();
 
   const [isRegistered, setIsRegistered] = useState(false);
+  const [nameInvalid, setNameInvalid] = useState(false);
+  const [emailInvalid, setEmailInvalid] = useState(false);
+  const [passwordInvalid, setPasswordInvalid] = useState(false);
+  const [idInvalid, setIdInvalid] = useState(false);
 
   const [studentInfo, setStudentInfo] = useState({
     name: "",
@@ -25,49 +30,47 @@ const Register = () => {
     });
   };
 
-  // const registerHandler = (event) => {
-  //   event.preventDefault();
-
-  //   const alreadyRegisteredEmail = studentsList.find((obj, index) => {
-  //     return obj.email === studentInfo.email;
-  //   });
-
-  //   const alreadyRegisteredId = studentsList.find((obj, index) => {
-  //     return obj.studentId === studentInfo.studentId;
-  //   });
-
-  //   if (alreadyRegisteredEmail || alreadyRegisteredId) {
-  //     setIsRegistered(true);
-  //   } else {
-  //     if (
-  //       studentInfo.name.length >= 2 &&
-  //       studentInfo.studentId.length >= 1 &&
-  //       studentInfo.email.includes("@") &&
-  //       studentInfo.password.length >= 4
-  //     ) {
-  //       dispatch(currentStudentActions.setCurrentStudent(studentInfo));
-  //       dispatch(loginStatusActions.setIsLoggedIn());
-  //       studentsList.push(studentInfo);
-  //       setIsRegistered(false);
-  //     }
-  //   }
-  // };
-
   const registerHandler = (event) => {
     event.preventDefault();
-    axios
-      .post("/api/register", studentInfo)
-      .then((serverRes) => {
-        if (serverRes.data === "already registered") {
-          setIsRegistered(true);
-        } else {
-          let student = serverRes.data;
-          dispatch(currentStudentActions.setCurrentStudent(student));
-          dispatch(loginStatusActions.setIsLoggedIn());
-          setIsRegistered(false);
-        }
-      })
-      .catch((err) => console.log(err));
+
+    if (
+      studentInfo.name.length >= 2 &&
+      studentInfo.studentId.length >= 4 &&
+      studentInfo.email.includes("@") &&
+      studentInfo.password.length >= 6
+    ) {
+      axios
+        .post("/api/register", studentInfo)
+        .then((serverRes) => {
+          if (serverRes.data === "already registered") {
+            setIsRegistered(true);
+          } else {
+            let student = serverRes.data;
+            dispatch(currentStudentActions.setCurrentStudent(student));
+            dispatch(loginStatusActions.setIsLoggedIn());
+            setIsRegistered(false);
+          }
+        })
+        .catch((err) => console.log(err));
+
+      setStudentInfo({
+        name: "",
+        studentId: "",
+        email: "",
+        password: "",
+        classes: [],
+      });
+
+      setEmailInvalid(false);
+      setIdInvalid(false);
+      setNameInvalid(false);
+      setPasswordInvalid(false);
+    } else {
+      studentInfo.name.length < 2 && setNameInvalid(true);
+      studentInfo.studentId.length < 4 && setIdInvalid(true);
+      !studentInfo.email.includes("@") && setEmailInvalid(true);
+      studentInfo.password.length < 6 && setPasswordInvalid(true);
+    }
   };
 
   return (
@@ -83,6 +86,8 @@ const Register = () => {
           type="text"
           placeholder="Student ID"
         />
+        {idInvalid && <p>ID must be at least 6 characters long</p>}
+
         <input
           onChange={inputChangeHandler}
           name="name"
@@ -91,6 +96,7 @@ const Register = () => {
           type="text"
           placeholder="Name"
         />
+        {nameInvalid && <p>Name field must be filled</p>}
 
         <input
           value={studentInfo.email}
@@ -100,6 +106,7 @@ const Register = () => {
           type="email"
           placeholder="Student Email"
         />
+        {emailInvalid && <p>Please enter a valid email</p>}
 
         <input
           value={studentInfo.password}
@@ -109,6 +116,7 @@ const Register = () => {
           type="password"
           placeholder="Password"
         />
+        {passwordInvalid && <p>Password must be at least 6 characters long</p>}
       </div>
       <button className={classes.btn} onClick={registerHandler}>
         Register

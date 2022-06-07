@@ -16,5 +16,6 @@
 @media (max-width: 798px) {
   .btn {
     height: 7vh;
+    font-size: 1.6em;
   }
 }

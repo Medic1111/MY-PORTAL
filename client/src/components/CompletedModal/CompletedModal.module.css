@@ -16,7 +16,6 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 2em;
-  color: #f7f7f7;
   color: #615665;
   letter-spacing: 1px;
 }
@@ -81,10 +80,6 @@
 }
 
 @media (max-width: 798px) {
-  /* .btn {
-    width: 10%;
-  } */
-
   .span {
     width: 30%;
     display: flex;

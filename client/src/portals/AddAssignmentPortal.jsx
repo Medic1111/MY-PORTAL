@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import classes from "./AddAssignmentPortal.module.css";
+import classes from "./CompletedPortal.module.css";
 
 const portal = document.getElementById("addAssignmentPortal");
 

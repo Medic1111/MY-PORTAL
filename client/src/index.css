@@ -1,8 +1,3 @@
-/* background-color: #1f84917c; */
-/* background-color: #d4dbdcf2; */
-/* color: #196974f2; */
-/* color: #475355e5; */
-
 * {
   margin: 0;
   padding: 0;
@@ -18,11 +13,7 @@ html {
 }
 body {
   background-color: #f7f7f7;
-
   height: inherit;
   width: inherit;
-  color: rgb(242, 237, 247);
-  color: #f7f7f7;
-  color: #475355;
   color: #3b4243;
 }

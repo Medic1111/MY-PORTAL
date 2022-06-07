@@ -12,7 +12,6 @@ export const currentClass = createSlice({
     },
     addAssignment: (state, action) => {
       state.class.grade = action.payload.newGrade;
-      console.log(state.class.grade);
     },
   },
 });

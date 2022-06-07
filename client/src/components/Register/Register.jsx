@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { currentStudentActions } from "../../features/currentStudent";
 import { loginStatusActions } from "../../features/loginStatus";
-
-import studentsList from "../../data/studentsList";
 import axios from "axios";
 
 const Register = () => {

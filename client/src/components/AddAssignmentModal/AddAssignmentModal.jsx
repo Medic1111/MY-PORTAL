@@ -10,16 +10,7 @@ const AddAssignmentModal = () => {
     (state) => state.CurrentStudentReducer.currentClass.name
   );
 
-  const [assignmentInfo, setAssignmentInfo] = useState({
-    newAssignment: "",
-  });
-
-  const inputChangeHandler = (event) => {
-    const { name, value } = event.target;
-    setAssignmentInfo((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
+  const [assignmentInfo, setAssignmentInfo] = useState("");
 
   const dispatch = useDispatch();
 
@@ -30,7 +21,7 @@ const AddAssignmentModal = () => {
     dispatch(
       currentStudentActions.addAssignment({
         name: currentClassName,
-        newAssignment: assignmentInfo.newAssignment,
+        newAssignment: assignmentInfo,
       })
     );
   };
@@ -50,7 +41,7 @@ const AddAssignmentModal = () => {
           </label>
           <input
             value={assignmentInfo.newAssignment}
-            onChange={inputChangeHandler}
+            onChange={(e) => setAssignmentInfo(e.target.value)}
             className={classes.input}
             type="text"
             name="newAssignment"

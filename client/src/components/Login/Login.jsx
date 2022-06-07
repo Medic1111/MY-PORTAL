@@ -2,7 +2,6 @@ import classes from "./Login.module.css";
 import { useDispatch } from "react-redux";
 import { loginStatusActions } from "../../features/loginStatus";
 import { currentStudentActions } from "../../features/currentStudent";
-import studentsList from "../../data/studentsList";
 import { useState } from "react";
 import axios from "axios";
 
@@ -22,23 +21,6 @@ const Login = () => {
   };
 
   const dispatch = useDispatch();
-
-  // const loginHandler = (event) => {
-  //   event.preventDefault();
-
-  //   const isItThere = studentsList.find((obj, index) => {
-  //     return obj.studentId === studentInfo.studentId;
-  //   });
-  //   const doesPasswordMatch = isItThere.password === studentInfo.password;
-
-  //   if (isItThere && doesPasswordMatch) {
-  //     dispatch(loginStatusActions.setIsLoggedIn());
-  //     dispatch(currentStudentActions.setCurrentStudent(isItThere));
-  //     setNoMatch(false);
-  //   } else {
-  //     setNoMatch(true);
-  //   }
-  // };
 
   const loginHandler = (event) => {
     event.preventDefault();

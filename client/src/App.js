@@ -1,9 +1,7 @@
-import React, { useEffect } from "react";
-import "./App.css";
+import React from "react";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home/Home";
 import Portal from "./pages/Portal/Portal";
-import axios from "axios";
 
 function App() {
   const loginStatusSelector = useSelector((state) => state.LoginStatusReducer);

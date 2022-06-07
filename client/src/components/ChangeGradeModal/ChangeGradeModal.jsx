@@ -10,16 +10,7 @@ const ChangeGradeModal = () => {
     (state) => state.CurrentStudentReducer.currentClass.name
   );
 
-  const [gradeInfo, setGradeInfo] = useState({
-    grade: "",
-  });
-
-  const inputChangeHandler = (event) => {
-    const { name, value } = event.target;
-    setGradeInfo((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
+  const [gradeInfo, setGradeInfo] = useState("");
 
   const dispatch = useDispatch();
 
@@ -28,7 +19,7 @@ const ChangeGradeModal = () => {
     dispatch(
       currentStudentActions.changeGrade({
         name: currentClassName,
-        newGrade: gradeInfo.grade,
+        newGrade: gradeInfo,
       })
     );
     dispatch(changeGradeModalModalActions.setIsModal());
@@ -49,7 +40,7 @@ const ChangeGradeModal = () => {
           </label>
           <input
             value={gradeInfo.grade}
-            onChange={inputChangeHandler}
+            onChange={(e) => setGradeInfo(e.target.value)}
             className={classes.input}
             type="text"
             name="grade"

@@ -1,6 +1,5 @@
 .aside {
   width: 25%;
-  background-color: #1cb3cd;
   height: 80%;
   display: flex;
   justify-content: flex-start;
@@ -18,7 +17,6 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 2em;
-  color: #f7f7f7;
   color: #615665;
   padding: 5vh 5vw;
   letter-spacing: 1px;
@@ -33,7 +31,6 @@
   padding: 3vh 0;
   gap: 1em;
   width: 90%;
-  background-color: #f7f7f73d;
   background-color: #f7f7f727;
 }
 

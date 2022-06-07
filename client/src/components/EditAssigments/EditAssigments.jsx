@@ -1,15 +1,10 @@
 import classes from "./EditAssigments.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import { currentStudentActions } from "../../features/currentStudent";
+import { useDispatch } from "react-redux";
 import { changeGradeModalModalActions } from "../../features/changeGradeModal";
 import { addAssignmentModalActions } from "../../features/addAssignmentModal";
 import { completedModalActions } from "../../features/completedModal";
 
 const EditAssigments = () => {
-  // const currentClassName = useSelector(
-  //   (state) => state.CurrentStudentReducer.currentClass.name
-  // );
-
   const dispatch = useDispatch();
 
   const openGradeModalHandler = () => {

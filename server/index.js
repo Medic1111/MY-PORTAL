@@ -17,17 +17,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-// PERSONAL REQUIRES
-// const registerRoute = require("./routes/register");
-// const loginRoute = require("./routes/login");
-// const logoutRoute = require("./routes/logout");
-
-// PERSONAL MIDDLEWARES
-
-// app.use("/", registerRoute);
-// app.use("/", loginRoute);
-// app.use("/", logoutRoute);
-
 // DATABASE
 mongoose.connect(process.env.DB_URI, (err) =>
   err ? console.log(err) : console.log("Connected to DB")

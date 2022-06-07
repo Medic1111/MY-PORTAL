@@ -58,10 +58,14 @@ const Register = () => {
     axios
       .post("/api/register", studentInfo)
       .then((serverRes) => {
-        let student = serverRes.data;
-        dispatch(currentStudentActions.setCurrentStudent(student));
-        dispatch(loginStatusActions.setIsLoggedIn());
-        setIsRegistered(false);
+        if (serverRes.data === "already registered") {
+          setIsRegistered(true);
+        } else {
+          let student = serverRes.data;
+          dispatch(currentStudentActions.setCurrentStudent(student));
+          dispatch(loginStatusActions.setIsLoggedIn());
+          setIsRegistered(false);
+        }
       })
       .catch((err) => console.log(err));
   };

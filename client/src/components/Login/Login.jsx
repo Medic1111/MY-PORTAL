@@ -26,7 +26,6 @@ const Login = () => {
   const loginHandler = (event) => {
     event.preventDefault();
     if (studentInfo.studentId.length < 6 || studentInfo.password.length < 6) {
-      console.log("Fields not filled");
       setFieldsNotFilled(true);
     } else {
       axios
@@ -51,7 +50,7 @@ const Login = () => {
       <h3 className={classes.h3}>Login</h3>
       <div className={classes.inputBox}>
         {noMatch && <p>Student Id or Password doesn't match</p>}
-        {fieldsNotFilled && <p>Please entere ID and Password</p>}
+        {fieldsNotFilled && <p>Please enter ID and Password</p>}
 
         <input
           className={classes.input}

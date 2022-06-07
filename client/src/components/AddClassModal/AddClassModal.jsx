@@ -1,9 +1,10 @@
 import classes from "./AddClassModal.module.css";
 import AddClassPortal from "../../portals/AddClassPortal";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addClassModalActions } from "../../features/addClassModal";
 import { currentStudentActions } from "../../features/currentStudent";
 import { useState } from "react";
+import axios from "axios";
 
 const AddClassModal = () => {
   const [classInfo, setClassInfo] = useState({
@@ -24,6 +25,7 @@ const AddClassModal = () => {
 
   const addClassHandler = (event) => {
     event.preventDefault();
+
     dispatch(addClassModalActions.setIsModal());
     dispatch(
       currentStudentActions.addClass({

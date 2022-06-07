@@ -8,22 +8,6 @@ import axios from "axios";
 function App() {
   const loginStatusSelector = useSelector((state) => state.LoginStatusReducer);
 
-  // const fetchApi = () => {
-  //   fetch("/api")
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data.message))
-  //     .catch((err) => console.log(err));
-  // };
-
-  const fetchApi = () => {
-    axios
-      .get("/api")
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(fetchApi, []);
-
   return (
     <React.Fragment>
       <Home />

@@ -17,7 +17,6 @@ const CompletedModal = () => {
   };
 
   const clearListHandler = () => {
-    console.log("Clearing list");
     dispatch(currentStudentActions.clearList({ name: currentClass.name }));
   };
 

@@ -4,6 +4,7 @@ import { loginStatusActions } from "../../features/loginStatus";
 import { currentStudentActions } from "../../features/currentStudent";
 import studentsList from "../../data/studentsList";
 import { useState } from "react";
+import axios from "axios";
 
 const Login = () => {
   const [noMatch, setNoMatch] = useState(false);
@@ -22,21 +23,38 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
+  // const loginHandler = (event) => {
+  //   event.preventDefault();
+
+  //   const isItThere = studentsList.find((obj, index) => {
+  //     return obj.studentId === studentInfo.studentId;
+  //   });
+  //   const doesPasswordMatch = isItThere.password === studentInfo.password;
+
+  //   if (isItThere && doesPasswordMatch) {
+  //     dispatch(loginStatusActions.setIsLoggedIn());
+  //     dispatch(currentStudentActions.setCurrentStudent(isItThere));
+  //     setNoMatch(false);
+  //   } else {
+  //     setNoMatch(true);
+  //   }
+  // };
+
   const loginHandler = (event) => {
     event.preventDefault();
-
-    const isItThere = studentsList.find((obj, index) => {
-      return obj.studentId === studentInfo.studentId;
-    });
-    const doesPasswordMatch = isItThere.password === studentInfo.password;
-
-    if (isItThere && doesPasswordMatch) {
-      dispatch(loginStatusActions.setIsLoggedIn());
-      dispatch(currentStudentActions.setCurrentStudent(isItThere));
-      setNoMatch(false);
-    } else {
-      setNoMatch(true);
-    }
+    axios
+      .post("/api/login", studentInfo)
+      .then((serverRes) => {
+        let student = serverRes.data[0];
+        if (serverRes.data.length <= 0) {
+          setNoMatch(true);
+        } else {
+          dispatch(loginStatusActions.setIsLoggedIn());
+          dispatch(currentStudentActions.setCurrentStudent(student));
+          setNoMatch(false);
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

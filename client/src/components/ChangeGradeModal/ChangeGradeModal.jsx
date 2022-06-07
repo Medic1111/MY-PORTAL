@@ -23,16 +23,15 @@ const ChangeGradeModal = () => {
 
   const dispatch = useDispatch();
 
-  const addClassHandler = (event) => {
+  const changeGradeHandler = (event) => {
     event.preventDefault();
-    dispatch(changeGradeModalModalActions.setIsModal());
-
     dispatch(
       currentStudentActions.changeGrade({
         name: currentClassName,
         newGrade: gradeInfo.grade,
       })
     );
+    dispatch(changeGradeModalModalActions.setIsModal());
   };
 
   const closeModalHandler = (event) => {
@@ -58,7 +57,7 @@ const ChangeGradeModal = () => {
           />
         </div>
         <div className={classes.btnBox}>
-          <button onClick={addClassHandler} className={classes.btnAdd}>
+          <button onClick={changeGradeHandler} className={classes.btnAdd}>
             Submit
           </button>
           <button onClick={closeModalHandler} className={classes.btnCancel}>

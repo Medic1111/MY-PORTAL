@@ -5,6 +5,7 @@ import { currentStudentActions } from "../../features/currentStudent";
 import { loginStatusActions } from "../../features/loginStatus";
 
 import studentsList from "../../data/studentsList";
+import axios from "axios";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -26,32 +27,45 @@ const Register = () => {
     });
   };
 
+  // const registerHandler = (event) => {
+  //   event.preventDefault();
+
+  //   const alreadyRegisteredEmail = studentsList.find((obj, index) => {
+  //     return obj.email === studentInfo.email;
+  //   });
+
+  //   const alreadyRegisteredId = studentsList.find((obj, index) => {
+  //     return obj.studentId === studentInfo.studentId;
+  //   });
+
+  //   if (alreadyRegisteredEmail || alreadyRegisteredId) {
+  //     setIsRegistered(true);
+  //   } else {
+  //     if (
+  //       studentInfo.name.length >= 2 &&
+  //       studentInfo.studentId.length >= 1 &&
+  //       studentInfo.email.includes("@") &&
+  //       studentInfo.password.length >= 4
+  //     ) {
+  //       dispatch(currentStudentActions.setCurrentStudent(studentInfo));
+  //       dispatch(loginStatusActions.setIsLoggedIn());
+  //       studentsList.push(studentInfo);
+  //       setIsRegistered(false);
+  //     }
+  //   }
+  // };
+
   const registerHandler = (event) => {
     event.preventDefault();
-
-    const alreadyRegisteredEmail = studentsList.find((obj, index) => {
-      return obj.email === studentInfo.email;
-    });
-
-    const alreadyRegisteredId = studentsList.find((obj, index) => {
-      return obj.studentId === studentInfo.studentId;
-    });
-
-    if (alreadyRegisteredEmail || alreadyRegisteredId) {
-      setIsRegistered(true);
-    } else {
-      if (
-        studentInfo.name.length >= 2 &&
-        studentInfo.studentId.length >= 1 &&
-        studentInfo.email.includes("@") &&
-        studentInfo.password.length >= 4
-      ) {
-        dispatch(currentStudentActions.setCurrentStudent(studentInfo));
+    axios
+      .post("/api/register", studentInfo)
+      .then((serverRes) => {
+        let student = serverRes.data;
+        dispatch(currentStudentActions.setCurrentStudent(student));
         dispatch(loginStatusActions.setIsLoggedIn());
-        studentsList.push(studentInfo);
         setIsRegistered(false);
-      }
-    }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

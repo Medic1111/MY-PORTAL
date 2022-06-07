@@ -7,10 +7,10 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const app = express();
 
-// DATABASE
-mongoose.connect(process.env.DB_URI, (err) =>
-  err ? console.log(err) : console.log("Connected to DB")
-);
+// // DATABASE
+// mongoose.connect(process.env.DB_URI, (err) =>
+//   err ? console.log(err) : console.log("Connected to DB")
+// );
 
 // GENERAL MIDDLEWARES
 app.use(
@@ -32,6 +32,11 @@ const logoutRoute = require("./routes/logout");
 app.use("/", registerRoute);
 app.use("/", loginRoute);
 app.use("/", logoutRoute);
+
+// DATABASE
+mongoose.connect(process.env.DB_URI, (err) =>
+  err ? console.log(err) : console.log("Connected to DB")
+);
 
 // UNHANDLED
 app.get("*", (req, res) => {

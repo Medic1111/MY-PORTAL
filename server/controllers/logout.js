@@ -14,7 +14,7 @@ const logoutStudent = (req, res) => {
     },
     { new: true, returnOriginal: false },
     (err, success) =>
-      err ? req.status(400).json(err) : res.status(204).json(success)
+      err ? res.status(400).json(err) : res.status(204).json(success)
   );
 };
 

@@ -31,22 +31,18 @@ const Login = () => {
       axios
         .post("/api/login", studentInfo)
         .then((serverRes) => {
-          console.log(serverRes);
-          if (serverRes.data === "invalid password") {
+          let student = serverRes.data[0];
+          dispatch(loginStatusActions.setIsLoggedIn());
+          dispatch(currentStudentActions.setCurrentStudent(student));
+          setNoMatch(false);
+        })
+        .catch((err) => {
+          if (err.response.status === 401 || err.response.status === 404) {
             setNoMatch(true);
           } else {
-            let student = serverRes.data[0];
-            if (serverRes.data.length <= 0) {
-              setNoMatch(true);
-            } else {
-              dispatch(loginStatusActions.setIsLoggedIn());
-              dispatch(currentStudentActions.setCurrentStudent(student));
-              setNoMatch(false);
-            }
+            setFieldsNotFilled(false);
           }
-        })
-        .catch((err) => console.log(err));
-      setFieldsNotFilled(false);
+        });
     }
   };
 

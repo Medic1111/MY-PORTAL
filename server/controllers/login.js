@@ -4,14 +4,15 @@ const bcrypt = require("bcrypt");
 const loginStudent = (req, res) => {
   const { studentId, password } = req.body;
   Student.find({ studentId }, (err, student) => {
-    if (err) {
-      console.log(err);
-    } else if (student[0]) {
-      bcrypt.compare(password, student[0].password, (err, match) => {
-        match ? res.send(student) : console.log(err);
-      });
+    err ? console.log(err) : null;
+    if (student.length === 0) {
+      res.status(404).send({ message: "Not Found" });
     } else {
-      res.send("invalid password");
+      bcrypt.compare(password, student[0].password, (err, match) => {
+        match
+          ? res.json(student)
+          : res.status(401).send({ message: "Not auth" });
+      });
     }
   });
 };

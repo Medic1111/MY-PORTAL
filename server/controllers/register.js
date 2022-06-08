@@ -15,7 +15,7 @@ const registerStudent = (req, res) => {
           if (err) {
             console.log(err);
           } else if (docs.length !== 0) {
-            res.send("already registered");
+            res.status(409).json({ message: "Already Registered" });
           } else {
             let newStudent = new Student({
               name,

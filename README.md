@@ -1,3 +1,7 @@
+# ANNOUCEMENT: VERSION 2 IS COMING SOON!
+
+- Repo is available as well as the deployed version. It is definitely a work in progress but it allows teacher-student direct relationship. Includes features such as live chat, dark mode, and more. =)
+
 # MY-PORTAL
 
 - Academic tool that helps students to keep track of classes, grades, and assignments in an easy, no non-sense way.

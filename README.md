@@ -1,51 +1,58 @@
 # MY-PORTAL
 
-- Academic tool that helps students to keep track of classes, grades, and assignments in an easy, no non-sense way.
+Academic tool that helps students to keep track of classes, grades, and assignments in an easy, no non-sense way.
 
-[live-heroku]: (https://testing-portal-api.herokuapp.com/)
+[live-heroku](https://testing-portal-api.herokuapp.com/)
 
-# TECH/TOOLS
+### TECH/TOOLS
 
-[FRONTEND]: React with CRA along with Redux for state management, and axios for HTTP request
+1. FRONTEND:
 
-[BACKEND]: NodeJS with Express for the server
+   - React with CRA along with Redux for state management, and axios for HTTP request
 
-[DATABASE]: MongoDB via mongoose and MongoDB-Atlas
+2. BACKEND:
 
-[HASH-SALT]: BCRYPT for hashing and salting student's info
+   - NodeJS with Express for the server
 
-# STEPS
+3. DATABASE:
+   - MongoDB via mongoose and MongoDB-Atlas
 
-[1]- Download the doc and run npm install to install all the dependencies
-[2]- Use node server/index.js to run the server/ alternatively use nodemon
-[3]- On a different terminal, cd client and run npm start
+4- HASH-SALT:
 
-# TEST CREDENTIALS:
+- BCRYPT for hashing and salting student's info
 
-studentId: 123456
-password: 123456
+### STEPS
 
-# THE IDEA:
+1. Download the doc and run `npm install` to install all the dependencies
+2. Use `node server/index.js` to run the server/ alternatively use nodemon
+3. On a different terminal, `cd client` and run `npm start`
 
-[OH_THE_PANDEMIC]
+> TEST CREDENTIALS:
 
-- During the pandemic when kids were virtually schooled, I has the opportunity to experience what my teenager son goes through in this new gen of education.
+- studentId: 123456
+- password: 123456
 
-- For the most part, there are no texts books anymore like back when I was his age. Everything is now online and through the school's website.
+## THE IDEA:
 
-[NO_HOMEWORK_DONE]
+###### OH_THE_PANDEMIC
 
-- Observing my son's lack of motivation to stay focused and organized, I decided to investigate further and asked him to get into the school portal: Where classes, grades and assignments are displayed.
+During the pandemic when kids were virtually schooled, I has the opportunity to experience what my teenager son goes through in this new gen of education.
 
-- After observing the literal headache it was, traveling from page to page to page to finally end-up in a very clumsy personal agenda, I understood his struggles better.
+For the most part, there are no texts books anymore like back when I was his age. Everything is now online and through the school's website.
 
-[THE_SOLUTION]
+###### NO HOMEWORK DONE
 
-- If using a paper agenda is a 'no-go' for kids nowadays (as he told me), then why not an app that's simple and easy to use while accomplishing the goal of helping to stay on track?
+Observing my son's lack of motivation to stay focused and organized, I decided to investigate further and asked him to get into the school portal: Where classes, grades and assignments are displayed.
 
-# THE APPROACH
+After observing the literal headache it was, traveling from page to page to page to finally end-up in a very clumsy personal agenda, I understood his struggles better.
 
-[ROOT]:
+###### THE SOLUTION
+
+If using a paper agenda is a 'no-go' for kids nowadays (as he told me), then why not an app that's simple and easy to use while accomplishing the goal of helping to stay on track?
+
+## THE APPROACH
+
+1. ROOT:
 
 - The user will be met with a login or register page
 
@@ -69,30 +76,29 @@ password: 123456
 
 - To avoid multiple requests to the server, the new user information gets sent to the backend for database update only when 'logout' is clicked
 
-[PRIORITY_LIST]
+> PRIORITY LIST
 
-- Mobile design lacks 'ease-of-use'
+- [ ] Mobile design lacks 'ease-of-use'
+- [ ] It will be completely redesigned so the user is met (upon login) with the aside element, and when clicks a class, a modal pops with the specific info, rather than having to scroll down.
+- [ ] The rest will likely remain the same.
+- [ ] I intend to run tests and see if sending requests to the backend upon info alteration will impact the app performance. If able to compromise, I will go that route to avoid the need to 'log-out' in order to persist new data.
 
-- It will be completely redesigned so the user is met (upon login) with the aside element, and when clicks a class, a modal pops with the specific info, rather than having to scroll down.
+## V-2
 
-- the rest will likely remain the same.
+[Development-live-version](https://portal-zone.herokuapp.com/)
 
-- I intend to run tests and see if sending requests to the backend upon info alteration will impact the app performance. If able to compromise, I will go that route to avoid the need to 'log-out' in order to persist new data.
+This app will have a second version that will provide it with less of a personal-agenda character and more like a teacher-student communication platform
 
-[V-2]
+The app will have a student segment and a teacher segment
 
-- This app will have a second version that will provide it with less of a personal-agenda character and more like a teacher-student communication platform
+The teacher registers themselves and add assignments and grades
 
-- The app will have a student segment and a teacher segment
+The student will sign up to classes available from the database.
 
-- The teacher registers themselves and add assignments and grades
+The student will then have his assignments being a list of the teachers assigned tasks
 
-- The student will sign up to classes available from the database.
+Marking complete will function as 'turning in' the assignment and await for teachers grading
 
-- The student will then have his assignments being a list of the teachers assigned tasks
+Overall the concept is the same with a more extensive use of database
 
-- Marking complete will function as 'turning in' the assignment and await for teachers grading
-
-- Overall the concept is the same with a more extensive use of database
-
-[ARYSE_TANSY]: Self-taught full-stack web developer on a life-long journey of learning and applying new skills.
+> ARYSE TANSY: Self-taught full-stack web developer on a life-long journey of learning and applying new skills.

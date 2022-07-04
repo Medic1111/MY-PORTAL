@@ -1,8 +1,14 @@
+# ANNOUCEMENT: VERSION 2 IS COMING SOON!
+
+- Repo is available as well as the deployed version. It is definitely a work in progress but it allows teacher-student direct relationship. Includes features such as live chat, dark mode, and more. =)
+
 # MY-PORTAL
 
 Academic tool that helps students to keep track of classes, grades, and assignments in an easy, no non-sense way.
 
 [live-heroku](https://testing-portal-api.herokuapp.com/)
+
+![Image of main user page](./client/public/main.png)
 
 ### TECH/TOOLS
 
@@ -31,6 +37,10 @@ Academic tool that helps students to keep track of classes, grades, and assignme
 
 - studentId: 123456
 - password: 123456
+
+![Log in page](./client/public/log.png)
+
+![Complete form image](./client/public/complete.png)
 
 ## THE IDEA:
 

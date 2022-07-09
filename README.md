@@ -31,7 +31,7 @@ Academic tool that helps students to keep track of classes, grades, and assignme
 
 1. Download the doc and run `npm install` to install all the dependencies
 2. Use `node server/index.js` to run the server/ alternatively use nodemon
-3. On a different terminal, `cd client` and run `npm start`
+3. On a different terminal, run `cd client` and then `npm start`
 
 > TEST CREDENTIALS:
 
